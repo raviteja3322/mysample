@@ -1,0 +1,15 @@
+{
+    "product": [
+      {
+        "id": 1,
+        "name": "tech",
+        "color": "green"
+      },
+      {
+        "id": 2,
+        "name": "maxo",
+        "color": "blue"
+      }
+    
+    ]
+  }

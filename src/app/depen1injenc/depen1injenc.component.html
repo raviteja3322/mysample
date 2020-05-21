@@ -1,0 +1,49 @@
+<h3>Basic Buttons</h3>
+
+<div class="example-button-row">
+  <button mat-button>Basic</button>
+  <button mat-button color="primary">Primary</button>
+  <button mat-button color="accent">Accent</button>
+  <button mat-button color="warn">Warn</button>
+  <button mat-button disabled>Disabled</button>
+  <a mat-button routerLink=".">Link</a>
+</div>
+
+<h3>Raised Buttons</h3>
+
+<div class="example-button-row">
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button routerLink=".">Link</a>
+</div>
+
+ <h1>{{title}}</h1>
+ <h1>Table Formate</h1>
+<table class="table">
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+      </tr>
+      <tr *ngFor="let emp of employes">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+      </tr>
+</table>
+<h1>Only Name</h1>
+ <ul *ngFor="let emp of employes">
+       <li>
+            {{emp.name}}
+       </li>
+ </ul>
+ <h1>Onload !....Welcome to {{title}}</h1><br/>
+ <h1>On button clcik: {{Serivescreate}}</h1>
+ <br> 
+ <button type="submit" (click)="onclick()">Submit</button>
+
+
+

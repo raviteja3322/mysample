@@ -1,0 +1,115 @@
+
+<h1>Front End Api</h1>
+<table class="table">
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+      </tr>
+      <tr *ngFor="let user of employedetails">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+      </tr>
+</table>
+
+
+<table class="table">
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>color</th>
+      </tr>
+      <tr *ngFor="let user of getjson1">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.color}</td>
+      </tr>
+</table>
+
+
+
+<h1>Json With Angular</h1>
+
+
+<table class="table" border="1">
+      <tr>
+                  <th>userId</th>
+                  <th>id</th>
+                  <th>title</th>
+                  <th>body</th>
+      </tr>
+      
+      <tr *ngFor="let user of getemployees1">
+        <td>{{user.userId}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.title}}</td>
+        <td>{{user.body}}</td>
+      </tr>
+</table>
+
+<hr> 
+<h1>Json - Server</h1>
+<table class="table">
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>color</th>
+      </tr>
+      <tr *ngFor="let user of jsonserver let i=index">
+        <td>{{i}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.color}}</td>
+      </tr>
+</table>
+
+<hr>
+
+
+
+<!-- <table class="table">
+      <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+      </tr>
+      <tr *ngFor="let user of employees">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.color}}</td>
+      </tr>
+</table>
+
+<hr> -->
+
+<h1>Backend Node Js Api</h1>
+<table class="table">
+      <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+      </tr>
+      <tr *ngFor="let com of BackendnodejsApi">
+            <td>{{com.id}}</td>
+            <td>{{com.name}}</td>
+            <td>{{com.age}}</td>
+      </tr>
+</table> 
+<hr>
+
+
+
+
+<!-- <ul *ngFor="let com of getuser | filter1 : 'name' : searchText ">
+<li>{{com.id}}</li>
+<li>{{com.name}}</li> 
+</ul> -->
+<!-- <li>{{com | json}}</li> -->
+
+
+
+<!-- <h1>Post Data Returnd</h1>
+
+<p>id :{{objpost.id}}</p>
+<p>name :{{objpost.name}}</p>
+<p>age :{{objpost.color}}</p> -->

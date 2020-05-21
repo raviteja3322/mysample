@@ -1,0 +1,54 @@
+<div  class="container">
+    <div class="row pt-15">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                        <h3 class="mb-0" style="color: white; margin-left: 100px;"><b>Login</b></h3>
+                </div>
+    
+                <form >
+                        <div class="form-group" style="margin-right: 250px;">
+                            <label>Employee_id</label>
+                            <input type="text"  #u1 name="Employee_id" 
+                              class="form-control" [(ngModel)]="username"
+                              name="username" required
+                              #Employee="ngModel" />
+
+                              <div class="help-bpx" *ngIf="!Employee.valid && Employee.touched" >
+                                <div *ngIf="Employee.errors.required" style="color:red;">**Please enter your Employee_id..</div>
+                               
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-right: 250px;">
+                            <label>Password</label>
+                            <input type="text"  
+                            id="Password" #p2   class="form-control" [(ngModel)]="Password"
+                            name="Password" required
+                            #Passwor="ngModel"/>
+                            
+                                <div class="help-bpx" *ngIf="!Passwor.valid && Passwor.touched" >
+                                    <div *ngIf="Passwor.errors.required" style="color:red;">**Please enter your Password..</div>
+                                   
+                                </div>
+                                <span style="color: red;"> {{ msg }}</span>
+                           
+                        </div>
+                     
+                       <button id="btn1" mat-raised-button (click)="check(u1.value, p2.value)">Login</button>
+                     
+                    </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<!--  you can use either routing or below process  -->
+     <!-- <div *ngIf="loginSuccess">
+        <app-emp-create></app-emp-create>
+
+    </div>  -->
+
+  
+
+    

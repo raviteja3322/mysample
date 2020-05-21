@@ -1,0 +1,78 @@
+<button id="btn1" class="btn btn-primary" (click)="backbtn()">BACK</button>
+<button id="btn2" class="btn btn-primary" (click)="Logout()">LogOut</button>
+<br>
+<br>
+
+
+
+<table class="table" border="1">
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>user_name</th>
+        <th>email</th>
+        <th>role_id</th>
+        <th>is_active</th>
+        <th>store_id</th>
+        <th>phone</th>
+    </tr>
+    <tr>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.user_name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role_id}}</td>
+        <td>{{user.is_active}}</td>
+        <td>{{user.store_id}}</td>
+        <td>{{user.phone}}</td>
+      </tr>
+</table>
+
+<div class="fff">
+<hr>
+</div>
+<div>
+   
+        <h1>Productr List</h1>
+        <div class="filter-wrap"><label>Product Name: </label>
+          <input [(ngModel)]="searchText" placeholder="Search Product Name" class="filter-input">
+        </div>
+  
+ <br>
+        <!-- <ol class="game-list">
+          <li *ngFor="let user of getlist | orderBy:'asc':'name' | filter1 : 'name' : searchText"  class="game-item">
+            <input type="checkbox" checked="{{user.checked}}" class="form-check-input" (change)="onChange(user,$event)">
+            <span>{{user.name}}</span>
+          </li>
+        </ol> -->
+<div>
+  <table border="1"  class="table" >
+
+ 
+        <tr> 
+           <th></th>
+          <th>id</th>
+          <th>name</th>
+          <th>store_id</th>
+          <th>created_at</th>
+          <th>updated_at</th> 
+         </tr>
+        <tr  *ngFor="let user of getlist | orderBy:'asc':'id' | filter1 : 'name' : searchText"  class="game-item">
+            <td width="10%"><input type="checkbox" checked="{{user.checked}}" class="form-check-input" (change)="onChange(user,$event)"></td>  
+            <td width="10%">{{user.id}}</td>
+            <td><a style="color: black;" (click)="onClick(user.name)">{{user.name}}</a></td>
+            <td>{{user.store_id}}</td>
+            <td>{{user.created_at}}</td>
+            <td>{{user.updated_at}}</td>
+        </tr>
+    </table>
+</div>  
+</div>
+
+<br>
+
+<div id="ravi">
+
+<app-subcategory [selProduct]="selProduct"></app-subcategory>
+  
+</div>

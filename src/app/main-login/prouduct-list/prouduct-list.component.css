@@ -1,0 +1,39 @@
+/* #empoyelist,td,th{
+    color: aliceblue;
+    background-color: darkcyan;
+    text-align: center;
+    border-block-start-style: dotted;
+  }
+  
+  #empoyelist{
+    box-sizing: border-box;
+    border: black;
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+th{
+    background-color: black;
+    padding-left: 8px;
+}
+
+#btn1{
+  margin-left: 650px;
+  background-color: #e7e7e7; color: black;
+}
+  */
+
+  
+table {
+  width: 100%;
+ margin-left: -40px;
+}
+mat-paginator {
+  margin-left: -40px;
+  width: 100%;
+}
+
+
+.mat-form-field {
+  font-size: 14px;
+  width: 50%;
+}

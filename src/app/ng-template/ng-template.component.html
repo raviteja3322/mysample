@@ -1,0 +1,78 @@
+<!-- <h1 style="text-align: center;">Ng-Tempalte</h1>
+
+<div *ngIf="somerandomvariable; then  trueblock else falseblock"></div>
+
+
+<ng-template #falseblock>
+    <div><h1>NO!!!</h1></div>
+</ng-template >
+
+<ng-template #trueblock>
+    <div><h1>YES!!!</h1></div>
+</ng-template>
+
+
+<div *ngIf="visible;else open then close">Button Click change to input field</div>&nbsp;
+<br>
+<input type="submit" (click)="tempa(open)"/>
+
+<br>
+<ng-template #open>  
+    <input type="text">
+</ng-template>
+
+<ng-template #close>
+    Close Input Field
+</ng-template>
+<hr> -->
+
+
+
+<div class="ravi">      
+    <div class="header">
+       <a class="logo">
+           <ng-container *ngTemplateOutlet="companylogo"></ng-container></a> 
+        <div class="header-right">
+          <a class="active" href="#home">Home</a>
+          <a routerLink="/about">About</a>
+          <a routerLink="/contact">Contact</a>
+        </div>
+      </div>
+<hr>
+<form>
+    <ng-container *ngTemplateOutlet="companylogo"></ng-container><br>
+     <div class="form-group">
+        <label>Email</label>
+        <input type="text" 
+            name="Email" 
+            class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="Password" 
+            name="Email" 
+            class="form-control">
+    </div>
+
+    <button type="button" class="btn btn-primary">Registar</button>
+</form>
+<hr>
+<footer>
+
+
+    <ng-container *ngTemplateOutlet="companylogo"></ng-container><br>
+    <nav>
+        <p><a style="color: white;">Terms of Use</a> | <a style="color: white;">Privacy Policy</a></p>
+    </nav>
+    <p>Copyright &copy; 2014 Tutorial Republic</p>
+</footer>
+
+</div>
+
+
+<ng-template #companylogo>
+    <div>
+        <img src="assets\image\download.png" width="110px;">
+    </div>
+</ng-template>

@@ -1,0 +1,19 @@
+
+ <table class="table table-bordered">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>category_id</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+        </tr>
+
+        <tr *ngFor="let category of selProduct?.subcategory">
+            <td >{{category.id}}</td>
+            <td>{{category.name}}</td>
+            <td>{{category.category_id}}</td>
+            <td>{{category.created_at}}</td>
+            <td>{{category.updated_at}}</td>
+          </tr>
+    </table>
+

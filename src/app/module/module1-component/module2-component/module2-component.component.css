@@ -1,0 +1,13 @@
+
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
+
+select.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.head{
+  text-align: center;
+  color: white;
+}

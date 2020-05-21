@@ -1,0 +1,38 @@
+.table{
+    margin-right: 80px;
+    margin-left: -50px;
+    margin-top: 20px;
+}
+/* th{
+    background-color: white;
+    text-align: center;
+} */
+
+td{
+    background-color: white;
+    text-decoration-color:black;
+
+}
+th,td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}  
+
+th{
+    text-align: center;
+    color: white;
+    background-color: black;  
+}
+
+hr{
+    margin-right: 80px;
+    margin-left: -50px;
+}
+/* tr:nth-child(even){
+    background-color: #fff;
+}
+
+tr:nth-child(odd){
+    background-color: #ddd;
+} */

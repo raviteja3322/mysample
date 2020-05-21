@@ -1,0 +1,40 @@
+/* body{
+    padding:0;
+    font-family:sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image:url(https://static.javatpoint.com/htmlpages/images/animal.jpg);
+
+} */
+/* .box{
+   
+    width:400px;
+    padding:60px;
+    position: relative;
+    top:50%;
+    left:50;
+    margin: auto;
+    margin-top: 120px;
+    background: yellow;
+    text-align: center;
+}
+.formheading{  
+    background-color:black;  
+    color:white;  
+    padding:3px;  
+    text-align:center;  
+}  
+.rr{
+    text-align: center;
+} */
+
+.container{
+    margin-bottom: 30px;
+    margin-left: 200px;
+}
+
+#btn1{
+    /* margin-left: 650px; */
+    background-color: #e7e7e7; color: black;
+  }
+   

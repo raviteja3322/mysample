@@ -1,0 +1,28 @@
+{
+  "production": [
+    {
+      "productname": "banna",
+      "productDescription": "ravi@gmail.com",
+      "produCategory": "dyanaa",
+      "id": 2
+    },
+    {
+      "productname": "apple",
+      "productDescription": "apple",
+      "produCategory": "good",
+      "id": 3
+    },
+    {
+      "productname": "oran",
+      "productDescription": "asas",
+      "produCategory": "aasasas",
+      "id": 4
+    },
+    {
+      "productname": "apple",
+      "productDescription": "apple",
+      "produCategory": "apple",
+      "id": 5
+    }
+  ]
+}

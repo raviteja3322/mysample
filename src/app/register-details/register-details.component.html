@@ -1,0 +1,24 @@
+<button id="btn1" class="btn btn-primary" (click)="backbtn()">BACK</button>
+
+    <table  border = "1" id="empoyelist">
+          <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Companyname</th>
+            </tr>
+          <tr *ngFor="let product of products;">
+            <td>{{product.id}}</td>
+            <td>{{product.username | titlecase}}</td>
+            <td>{{product.email}}</td>
+            <td>{{product.companyname | titlecase}}</td>
+            <td [routerLink]="['/registerview',product.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><button class="btn btn-success" >VIEW</button></td>
+            <td [routerLink]="['/registerupdated',product.id]"><button class="btn btn-primary">EDIT</button></td>
+            <td (click)="deleteproduct(product.id)"><button class="btn btn-danger">DELETE</button></td>
+          </tr>
+    </table>
+
+
+    
+   
+

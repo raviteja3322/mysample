@@ -1,0 +1,50 @@
+
+<table class="table" border="1">
+    <tr>
+                <th>userId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>body</th>
+    </tr>
+    
+    <tr *ngFor="let user of getemployees1">
+      <td>{{user.userId}}</td>
+      <td>{{user.id}}</td>
+      <td>{{user.title}}</td>
+      <td>{{user.body}}</td>
+    </tr>
+</table> 
+
+
+
+<hr>
+
+
+<table class="table" border="1">
+  <tr>
+              <th>userId</th>
+              <th>id</th>
+              <th>title</th>
+              <th>body</th>
+  </tr>
+  
+  <tr *ngFor="let user of post">
+    <td>{{user.userId}}</td>
+    <td>{{user.id}}</td>
+    <td>{{user.title}}</td>
+    <td>{{user.body}}</td>
+  </tr>
+</table> 
+
+<hr>
+
+
+<!-- 
+<h1>Post Data Returnd</h1>
+<p>userId :{{objpost.userId}}</p>
+<p>id :{{objpost.id}}</p>
+<p>name :{{objpost.title}}</p>
+<p>age :{{objpost.body}}</p>
+
+ -->
+

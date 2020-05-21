@@ -1,0 +1,121 @@
+
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+        <form #regForm="ngForm">
+  
+          <div class="form-group">
+
+            <label ><b style="color:white">Username</b></label>
+      
+            <input required minlength="3" maxlength="10" 
+            placeholder="Enter your Username...."
+             [(ngModel)]="formdata.username"  name="Username" type="text" #Username="ngModel" class="form-control" id="Username">
+      
+            <div class="help-bpx" *ngIf="!Username.valid && Username.touched" >
+              <div *ngIf="Username.errors.required" style="color:black;">**Please enter Username..</div>
+              <div *ngIf="Username.errors.minlength" style="color:black;">**Username should be minimum 4 characters</div>
+            </div>
+      
+        </div>
+      
+         
+      
+            <br>
+
+        <div class="form-group">
+          <label ><b style="color:white">Email</b></label>
+          <input type="text"  
+          class="form-control"  
+          autocomplete="off" 
+          placeholder="Enter your Email...."
+          required 
+          [(ngModel)]="formdata.email"
+          name="email" 
+          email
+          #email1="ngModel">
+          <div class="help-bpx" *ngIf="!email1.valid && email1.touched" >
+              <div *ngIf="email1.errors.required" style="color:black;">**Please enter your email..</div>
+              <div *ngIf="email1.errors.email" style="color:black;">**Email Must be a valid email Address..</div>
+          </div>
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label><b style="color:white">Company</b></label>
+        <input type="text"  
+        id="companyname" 
+        class="form-control"  
+        placeholder="Enter your Companyname...."
+        required 
+        [(ngModel)]="formdata.companyname"
+        name="companyname" 
+        #Companyname1="ngModel"
+        minlength="4"
+        >
+        <div class="help-bpx" *ngIf="!Companyname1.valid && Companyname1.touched" >
+            <div *ngIf="Companyname1.errors.required" style="color:black;">**Please enter your companyname..</div>
+            <div *ngIf="Companyname1.errors.minlength" style="color:black;">**companyname should be minimum 9 characters</div>
+        </div>
+       </div>
+       <br>
+      
+     <div class="form-group">
+          <label><b style="color:white">Mobilenumber</b></label>
+          <input type="text"    
+          autocomplete="off" 
+          class="form-control" 
+          placeholder="Enter your MobileNumber...."
+          required 
+          minlength="10"
+          [(ngModel)]="formdata.phonenumber"
+          name="phonenumber" 
+          #phonenumber1="ngModel" pattern="^\d{10}$">
+          <div class="help-bpx" *ngIf="!phonenumber1.valid && phonenumber1.touched" >
+              <div *ngIf="phonenumber1.errors.required" style="color:black;">**Please enter your Mobilenumber..</div>
+              <div *ngIf="phonenumber1.errors.pattern" style="color:black;">**Mobile number not valid.. </div>
+          </div>
+      </div>
+      <br>
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+       
+<input type="submit" id="submit" class="submit-button" (click)="submit()" ><br>
+         
+        
+				</form>
+				<p>Don't have an Account? <a href="#"> Login Now!</a></p>
+			</div>
+		</div>
+
+		<div class="colorlibcopy-agile">
+			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+		</div>
+	
+	</div>
+  <table border="1"  *ngIf="submitted" class="table" >
+
+ 
+    <tr> 
+     
+      <th>username</th>
+      <th>email</th>
+      <th>companyname</th>
+      <th>phonenumber</th>
+    </tr>
+     <tr *ngFor="let item of recieved">  
+      <td><span>{{item.username}}</span></td>  
+       <td><span>{{item.email}}</span></td>  
+       <td><span>{{item.companyname}}</span></td>  
+       <td><span>{{item.phonenumber}}</span></td>  
+   </tr>  
+</table>
+</body>

@@ -1,0 +1,10 @@
+
+<input type="text" #val> &nbsp;
+<button (click)="submit(val)" class="btn btn-success">Submit</button>
+<br> <br>
+<app-child-hooks *ngIf="parentExist" [myValue]="value" style="color: white;">
+    ng-Content: <b style="color: black;">{{value}}</b> 
+</app-child-hooks>
+<br>
+<br>
+<button (click)="Destory()" class="btn btn-primary">Destroy</button>

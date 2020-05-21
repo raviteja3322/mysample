@@ -1,0 +1,54 @@
+/* table, th, td ,tr{
+    border: 1px solid black;
+}
+#table{
+    width: 100%;
+} */
+
+
+.table,td,th{
+    color: aliceblue;
+    background-color: darkcyan;
+    text-align: center;
+}
+  
+  .table{
+    box-sizing: border-box;
+    border: black;
+    width: 100%;
+    margin-left: -40px;
+    
+  }
+
+th{
+    background-color: black;
+    padding-left: 8px;
+}
+
+/* .table{
+    margin-left: -40px;
+} */
+
+#ravi{
+    margin-left: -40px;
+    margin-right: 30px;
+}
+
+#ravi1{
+    margin-left: -40px;
+}
+.fff{
+    margin-left: -40px;
+    margin-right: 40px;
+
+}
+
+#btn1{
+    /* margin-left: 650px; */
+    background-color: #e7e7e7; color: black;
+  }
+   
+  #btn2{
+    margin-left: 650px;
+    background-color: #e7e7e7; color: black;
+  }

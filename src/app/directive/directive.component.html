@@ -1,0 +1,173 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Add Server</h1>
+            
+                <button class="btn btn-primary" (click)="clickserve()">Add Server</button>
+                      
+          
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let serve of servers let i=index"
+                (click)="onremoveserve()">
+                  {{serve}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="EvenOddButton = !EvenOddButton">EVEN AND ODD</button>
+            <br/><br/>
+             <ul class="list-group">
+                <li *ngFor="let number of numbers" class="list-group-item">
+                        {{number}}
+                </li>
+            </ul> 
+        <ul class="list-group"> 
+            <div *ngIf="EvenOddButton">
+                        <li class="list-group-item" 
+                        *ngFor="let even of evennumber">
+                                {{even}}
+                        </li>
+            </div>
+            <div *ngIf="!EvenOddButton">
+                        <li class="list-group-item" *ngFor="let odd of oddnumber">
+                                {{odd}}
+                        </li>
+            </div>
+        </ul> 
+    </div>
+    </div>
+</div>
+
+
+<h1>ngStyle case</h1>
+<hr>
+<h1 [ngStyle]="{backgroundColor: getcolor()}" [ngClass]="{online: serive == 'online'}">{{serive}}</h1>
+
+<h1><p>{{serive}}</p></h1>
+
+<h1>ngIf case</h1>
+<hr>
+
+
+<div *ngIf="2>1">Yes 2 is greater than 1</div>
+
+
+
+
+<div *ngIf="somerandomvariable; then  trueblock else falseblock"></div>
+
+
+<ng-template #falseblock>
+    <div><h1>NO!!!</h1></div>
+</ng-template >
+
+<ng-template #trueblock>
+    <div><h1>YES!!!</h1></div>
+</ng-template>
+
+
+
+<br/>
+<div *ngIf="course1.length > 1; then  listcourse else nocourse">
+
+</div>
+<ng-template #listcourse>
+        List of course
+</ng-template>
+<ng-template #nocourse>
+        No List of course
+</ng-template>
+
+<button (click)="getmrthod()">submit</button>
+
+
+
+
+
+
+
+<!-- Hidden Property -->
+<hr>
+<div [hidden]="course1.length == 2">
+    List of course
+</div>
+<div [hidden]="course1.length > 3">
+        No List of course
+</div>
+<hr>
+<h1>ngSwitch case</h1>
+
+<ul class="nav nav-pills">
+    <li [class.active]="viewmode == 'map'"><a (click)="viewmode = 'map'">Map View</a></li>
+    <li [class.active]="viewmode == 'list'"><a (click)="viewmode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewmode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+
+
+<br/>
+Select country:<select (change)="choice($event.target.value)">
+    <option>Select Country</option>
+    <option *ngFor="let c of countries" [value]="c.code">
+        {{c.country}}
+    </option>
+</select>
+{{selectedcode}}
+<br/>
+
+<div [ngSwitch]="selectedcode">
+    <div *ngSwitchCase="'ind'">
+        <h1>india</h1>
+    </div>
+    <div *ngSwitchCase="'Uae'">
+        <h1>United arab Emirates</h1>
+    </div>
+    <div *ngSwitchCase="'$'">
+        <h1>united State</h1>
+    </div>
+    <div *ngSwitchDefault>
+        <h1>Select country</h1>
+    </div>
+</div>
+
+<hr>
+<h1>ngfor case</h1>
+<button (click)="clickcouse()">Add Course</button>
+<ul>
+        <!-- <li *ngFor="let course of courses; index as i">
+                {{i}} -{{course.name}}
+            </li> -->
+
+    <li *ngFor="let course of courses">
+      {{course.name}} <button (click)="onremove(course)">Remove</button>
+    </li>
+</ul>
+<!-- <ul>
+    <li *ngFor="let user of users">
+        {{user}}
+    </li>
+</ul> -->
+<br/>
+<table class="table">
+    <tr class="thead-dark">
+        <th>Index</th>
+        <th>Id</th>
+        <th>Name1</th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let user of users; index as i; even as e;odd as o">
+            <td>{{i}}</td>
+        <td>{{user.id}} {{e}} {{o}}</td>
+        <td>{{user.name}} </td>
+        <td>{{user.city}} </td>
+    </tr>
+</table>

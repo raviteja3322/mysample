@@ -1,0 +1,30 @@
+<div class="select-box">   
+                <div>
+                    <h3>Ng Select</h3>
+                </div> 
+  
+            <ng-select  [items]="data"
+                        bindLabel="name"
+                        autofocus
+                        bindValue="name"
+                        [(ngModel)]="ravi" placeholder="Select Dropdown" >
+            </ng-select>
+            Selected: <b>{{ravi}}</b>
+</div>
+
+
+<hr>
+
+
+
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px">
+    <select [(ngModel)]="empidselectd" (ngModelChange)="onemployeselected($event)">
+        <option *ngFor="let emp of data" [ngValue]="emp">
+            {{emp.name}}
+        </option>
+    </select><br>
+    The Value Selectd is:{{empidselectd}} <br><br>
+
+    {{modifieldtext}}
+</div>
+

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+            <div class="text-align:center">
+                    <h1>{{Name | uppercase}}</h1><br/>
+                    <h1>{{Name | lowercase}}</h1><br/>
+                    <P>{{Thisday}}</P><br/>
+                    <p>{{Thisday | date}} </p><br>
+                    <p>{{Thisday | date : 'dd/MM/yy'}} </p><br>
+                    <p>{{Eligblepercent}}</p><br>
+                    <p>{{Eligblepercent | number : '2.2-3'}}</p><br>
+                    <p>{{curcountry | currency}}</p><br>
+                    <p>{{curcountry | currency : 'INR' : true}}</p><br>
+                    <p>{{Name | slice : 2:4}}</p>
+            </div>
+    </div>
+</div>
+<pre>
+{{ravi  | json}}
+</pre>

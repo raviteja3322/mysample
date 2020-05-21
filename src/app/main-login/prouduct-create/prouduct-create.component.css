@@ -1,0 +1,31 @@
+
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
+
+select.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.head{
+  text-align: center;
+  color: white;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  background-color: teal;
+  margin-left: 100px;
+text-align: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.btn3{
+  margin-left: -20px;
+
+}

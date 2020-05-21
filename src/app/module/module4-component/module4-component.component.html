@@ -1,0 +1,121 @@
+<h1 style="text-align: center;">module4-component works!</h1>
+
+<button (click)="toggle()" class="btn btn-primary" style="margin-left: 330px;">{{isOpen ? 'Close Me' : 'Open Me'}}</button>
+<br>
+<br>
+
+<div [@toggleBox]="isOpen ? 'open' : 'closed'" class="custom-style">
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+<br><br>
+<div style="height: 100px; width: 100px;" [@divState]="stateName" ></div>
+ 
+<button (click)="switchState()">Switch State</button>
+
+<br> <br>
+	
+<!-- <table *ngIf="showImage"
+[@inOutAnimation] border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Ravi</td>
+    </tr>
+</table> -->
+    <img
+    *ngIf="showImage"
+    [@inOutAnimation]
+    width="300"
+    alt="Angular Logo"
+    src="assets\image\download.png"
+  />
+
+<button (click)="onClick()">Toggle Image</button>
+<br>
+<div @fadeAnimation1 *ngIf="show">
+    <div class="container">
+        <div class="row pt-15">
+            <div class="col-md-6 mx-auto">
+                <div class="card-rounded-0">
+                    <div class="card-boday">
+                         <form #productdata="ngForm" (ngSubmit)="addnewproduct(productdata.value)">
+                    
+                                    <div class="form-group">
+                                        <label><b>ProductName</b></label>
+                                        <input type="text"  
+                                        id="productname" 
+                                        class="form-control"  
+                                        placeholder="Enter your ProductName...."
+                                        required 
+                                        [(ngModel)]="productname"
+                                        name="productname" 
+                                        #product="ngModel" 
+                                        minlength="3"
+                                        maxlength="10" ngModel>
+                                    
+                                       
+    
+                                </div>
+    
+                                    <div class="form-group">
+                                        <label ><b>productDescription</b></label>
+                                        <input type="text"  
+                                        class="form-control"  
+                                        autocomplete="off" 
+                                        placeholder="Enter your productDescription...."
+                                        required 
+                                        [(ngModel)]="productDescription"
+                                        name="productDescription"  id="productDescription" 
+                                      
+                                        #productdesp="ngModel" ngModel>
+                                      
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                    <label><b>produCategory</b></label>
+                                    <input type="text"  
+                                    id="produCategory" 
+                                    class="form-control"  
+                                    placeholder="Enter your produCategory...."
+                                    required 
+                                    [(ngModel)]="produCategory"
+                                    name="produCategory" 
+                                    #producateg="ngModel"
+                                    minlength="4" ngModel
+                                    >
+                                   
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <a class="btn btn-default" routerLink="/module">Cancel</a>
+                                        <!-- <button [disabled]="saving" class="btn btn-primary">
+                                            <span *ngIf="saving" class="spinner-border spinner-border-sm mr-1"></span>
+                                            Save
+                                        </button> -->
+                                    </div>
+    
+                             
+                            </form>  
+    
+                           
+    
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<button (click)="show = !show">Toggle</button>
+<br>
+<button (click)="toggleList()">toggle list</button>
+
+<ul [@listAnimation]="items.length" class="items">
+    <li *ngFor="let item of items" class="item">
+      Item {{ item }}
+    </li>
+  </ul>

@@ -1,0 +1,235 @@
+<h1>Super hero</h1>
+<div class="container">
+<div [hidden]="submitted">
+    <form #superheroform="ngForm" (ngSubmit)="onsubmit2()">
+            <div class="form-group">
+                    <label for="name">Super Hero Name</label>
+                     <input type="text" id="name"  
+                     class="form-control" 
+                     required 
+                     [(ngModel)]="model.name"
+                     name="name" 
+                     #name="ngModel">
+                        <div [hidden]="!name.valid || name.touched" class="alert alert-danger">
+                          Super Hero Name is Required
+                        </div> 
+             </div>
+
+             <div class="form-group">
+                    <label for="Weapon" >Hero Weapon</label>
+                       <select id="Weapon" 
+                       class="form-control" 
+                       required 
+                       [(ngModel)]="model.Weapon" 
+                       name="Weapon" 
+                       #WEapon="ngModel">
+                            <option *ngFor="let wea of weapon" [value]="wea">{{wea}}</option>       
+                       </select>
+                            <div [hidden]="WEapon.valid || WEapon.pristine" class="alert alert-danger">
+                                    Weapon is Required
+                            </div>
+            </div>
+             <div class="form-group">
+                    <label for="speciality" >Hero speciality</label>
+                       <select id="speciality" class="form-control" 
+                       required [(ngModel)]="model.speciality" name="speciality" #Speciality="ngModel">
+                            <option *ngFor="let spe of speciality" [value]="spe">{{spe}}</option>       
+                       </select>
+                       <div [hidden]="Speciality.valid || Speciality.pristine" class="alert alert-danger">
+                            speciality is Required
+                       </div>
+            </div> 
+            <div class="form-group">
+                    <label for="realname">Super RealName</label>
+                     <input type="text" id="realname"  class="form-control" 
+                     required [(ngModel)]="model.realname" name="realname" #realname="ngModel">
+             </div>
+             <button type="submit" [disabled]="!superheroform.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</div>
+<div [hidden]="!submitted">
+    <h2>Submitted following</h2>
+    <div class="row">
+        <div class="col-xs-3">Super Hero Name</div>
+        <div class="col-xs-9">{{model.name}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Super RealName</div>
+        <div class="col-xs-9">{{model.realname}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Hero Weapon</div>
+        <div class="col-xs-9">{{model.Weapon}}</div>
+    </div>
+    <div class="row">
+            <div class="col-xs-3">Hero speciality</div>
+            <div class="col-xs-9">{{model.speciality}}</div>
+    </div>
+    <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+<hr>
+<h1>Reactive Form</h1> 
+<div class="container">
+    <div class="row">  
+        <div class="col-xs-12">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit1()">
+
+     <div formGroupName="userdata" *ngIf="!signUpForm.get('userdata.Username').vaild && signUpForm.get('userdata.Username').touched">
+      
+     </div>
+        <!-- {{signUpForm.value | json}}      -->
+    <div class="form-group">
+        <label for="Username">Username</label>
+         <input type="text" id="Username"   name="Username" [(ngModel)]="model.username" class="form-control" formControlName="Username">
+            <span *ngIf="!signUpForm.get('Username').vaild && signUpForm.get('Username').touched"
+                class="help-block" >Please Enter Username</span>
+     </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+            <input type="Email" id="Email" class="form-control" formControlName="Email">
+                <span *ngIf="!signUpForm.get('Email').vaild && signUpForm.get('Email').touched"
+                    class="help-block" >Please Enter Email</span>
+    </div>
+    
+    <div class="radio" *ngFor="let gender of genders">
+        <label>                  
+            <input type="radio" id="radio" [value]="gender" formControlName="gender">
+                          {{gender}}
+                    </label>
+    </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+</div>
+</div>
+</div>
+
+
+<hr>
+
+
+<h1>Template Drive Form</h1>
+
+<div class="container">
+<div [hidden]="submitted1">
+    <div class="row">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+                {{defacultquestion | json}}    
+            <div id="userdata" ngModelGroup="userdata" #userdata="ngModelGroup">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                        <input type="text" id="username" 
+                        required 
+                        [(ngModel)]="defacultquestion" 
+                        class="form-control" 
+                        ngModel  
+                        name="username"
+                        #username="ngModel">
+
+                        <span class="help-block" *ngIf="!username.vaild && username.touched">Please enter a Username</span>
+                </div>
+        <button type="button" class="btn btn-primary" (clcik)="suggestUsername()">Suggest an username</button>
+                <div class="form-group">
+                    <label for="mail">Email</label>
+                        <input type="email" id="email" class="form-control" ngModel name="email" #email="ngModel" 
+                            required  email>
+                       <span class="help-block" *ngIf="!email.vaild && email.touched">Please enter a vaild email</span>
+                </div>
+            </div>
+<p *ngIf="!userdata.vaild && userdata.touched">User data is invaild!!</p>
+
+        <div class="form-group">
+            <label for="secret" >secret Question</label>
+               <select id="secret" class="form-control" [ngModel]="defacultquestion" name="secret">
+                    <option value="pet">first pet</option>
+                    <option value="teaacher">first ravi</option>
+               </select>
+        </div>
+        <div> 
+                <textarea name="questionAnswer" [(ngModel)]="answer"  rows="3" class="form-control"></textarea>
+        </div>
+            <p>you Reply: {{answer}}</p>
+        <div class="radio" *ngFor="let gender of genders">
+                <label>
+                    <input type="radio"  class="radio" name="gender" ngModel  [value]="gender" required>
+                            {{gender}}
+                </label>
+        </div>
+    <button type="submit"  class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+</form>
+</div>
+</div>
+</div>
+<hr>
+<div [hidden]="!submitted1">
+    <h2>Submitted following</h2>
+    <div class="row">
+        <div class="col-xs-3">Username</div>
+        <div class="col-xs-9">{{User.username}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Email</div>
+        <div class="col-xs-9">{{User.email}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">secret Question</div>
+        <div class="col-xs-9">{{User.secretquestion}}</div>
+    </div>
+    <div class="row">
+            <div class="col-xs-3">Comments</div>
+            <div class="col-xs-9">{{User.questionAnswer}}</div>
+    </div>
+    
+    <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+ <div class="row" >
+    <div class="col-xs-12">
+           
+  <h1>Your Dta</h1>
+    
+        <p>username: {{User.username}}</p>
+        <p>mail: {{User.email}}</p>
+        <p>secret question: {{User.secretquestion}}</p>
+        <p>answer: {{User.questionAnswer}}</p>
+        <p>gender: {{User.gender}}</p>
+    
+</div>
+</div>   
+<hr>
+ <div class="container">
+        <div class="row">
+
+<form >
+<div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" 
+     ngModel 
+     name="firstname"
+     #firstname="ngModel" 
+     (change)="log(firstname)" 
+     id="firstname" 
+     class="form-control"
+     minlength="3"
+     maxlength="10"
+     pattern="ravi" required
+     >
+    <div class="alert alert-danger" *ngIf="firstname.touched && !firstname.vaild">
+        <div *ngIf="firstname.errors.required">First name is required</div>
+        <div *ngIf="firstname.errors.minlength">First name should be minimum 3 characters.</div>
+        <div *ngIf="firstname.errors.pattern">First name does't match</div>
+       
+    </div>
+</div>
+
+<div class="form-group">
+        <label for="Comment">Comment</label>
+        <textarea ngModel name="Comment" id="Comment" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <button type="button"  class="btn btn-primary">Submit</button>
+</form> 
+</div>
+</div> 

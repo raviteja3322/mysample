@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+ }
+ cdk-virtual-scroll-viewport {
+    height: 400px;
+    margin-right: 40px;
+ }
+
+
+   
+.table,td,th{
+    color: aliceblue;
+    background-color: darkcyan;
+    text-align: center;
+}
+  
+  .table{
+    box-sizing: border-box;
+    border: black;
+    width: 100%;
+  
+    
+  }
+
+th{
+    background-color: black;
+    padding-left: 8px;
+    position: static;
+}

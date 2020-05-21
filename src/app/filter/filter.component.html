@@ -1,0 +1,145 @@
+<div>
+    <div class="filter-wrap"><label>Name</label>
+      <input [(ngModel)]="searchText" placeholder="Search Name" class="filter-input">
+    </div>
+</div>
+
+<br>
+<div>
+  <h3><b>Filter Name</b></h3>
+<table  class="table" border="1">
+  <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+  </tr>
+  <tr *ngFor="let user of employedetails | filter1 : 'name' : searchText" (change)="getSelected()">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.age}}</td>
+  </tr>
+</table>
+</div>
+
+
+<div>
+  <h3><b>Asc And Desc Order</b></h3>
+<table class="table" border="1">
+    <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+    </tr>
+ 
+    <tr *ngFor="let user of employedetails | orderBy:'asc':'name'"    (change)="getSelected()">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.age}}</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <h3><b>Filter Age</b></h3>
+ <table class="table">
+  <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+  </tr>
+  <tr *ngFor="let user of employedetails | filter1 :  'id' : searchText "    (change)="getSelected()">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.age}}</td>
+  </tr>
+</table> 
+</div> -->
+
+<!-- <hr>
+
+<h3>Select Available Games Below</h3>
+<div>
+  <div class="filter-wrap"><label>Search Game Name</label>
+    <input placeholder="Game Name" [(ngModel)]="searchText1" class="filter-input"/>
+  </div>
+</div>
+
+<div>
+  <ol class="game-list">
+    <li *ngFor="let g of games | filter1 : 'name' : searchText1" class="game-item">
+      <input type="checkbox" name="games" value="g.id" [(ngModel)]="g.selected" (change)="getfilter()">
+      <span>{{g.name}}</span>
+    </li>
+  </ol>
+</div>
+
+<div class="selected-games-wrap">
+    <div class="selected-game" *ngFor="let s of selected_games" >
+      <span>{{s.name}}</span>
+    </div>
+</div>
+
+<button (click)="cleargame()" type="btn btn-primary">Clear Game</button> -->
+  

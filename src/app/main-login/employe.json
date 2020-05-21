@@ -1,0 +1,64 @@
+{
+  "employe": [
+    {
+      "username": "ravi",
+      "email": "ravi@gmail.com",
+      "companyname": "dyanaa",
+      "id": 1
+    },
+    {
+      "username": "gopi",
+      "email": "gopi@gmail.com",
+      "companyname": "gopi",
+      "id": 2
+    },
+    {
+      "username": "username",
+      "email": "username@gmail.com",
+      "companyname": "innovista",
+      "id": 3
+    },
+    {
+      "username": "cccc",
+      "email": "ccc@gmail.com",
+      "companyname": "cccccc",
+      "id": 4
+    },
+    {
+      "username": "raviteja",
+      "email": "dsdsd@gmail.com",
+      "companyname": "assad",
+      "id": 5
+    },
+    {
+      "username": "VVV",
+      "email": "vvv@gmail.com",
+      "companyname": "vvvvv",
+      "id": 19
+    },
+    {
+      "username": "hi",
+      "email": "hh@gmail.com",
+      "companyname": "hhhh",
+      "id": 20
+    },
+    {
+      "username": "cbc",
+      "email": "cbc@gmail.com",
+      "companyname": "cbc",
+      "id": 21
+    },
+    {
+      "username": "gopi",
+      "email": "gopi@gmail.com",
+      "companyname": "gopii",
+      "id": 22
+    },
+    {
+      "username": "ravi",
+      "email": "ravi@gmail.com",
+      "companyname": "dynata",
+      "id": 23
+    }
+  ]
+}

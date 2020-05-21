@@ -1,0 +1,9 @@
+.sidebar{
+    background: #2f1c1c;
+    color: red;
+    height: 100%;
+    padding: 20px 50px 20px 5px;
+}
+.sidebar ul li{
+    list-style-type: none;
+}

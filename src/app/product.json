@@ -1,0 +1,34 @@
+{
+  "product": [
+    {
+      "username": "ravi",
+      "email": "ravi@gmail.com",
+      "companyname": "dyanaa",
+      "id": 1
+    },
+    {
+      "username": "gopi",
+      "email": "gopi@gmail.com",
+      "companyname": "gopi",
+      "id": 2
+    },
+    {
+      "username": "username",
+      "email": "username@gmail.com",
+      "companyname": "innovista",
+      "id": 3
+    },
+    {
+      "username": "cccc",
+      "email": "ccc@gmail.com",
+      "companyname": "cccccc",
+      "id": 4
+    },
+    {
+      "username": "raviteja",
+      "email": "dsdsd@gmail.com",
+      "companyname": "assad",
+      "id": 5
+    }
+  ]
+}

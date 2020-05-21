@@ -1,0 +1,79 @@
+
+
+
+<div class="text-align:center">
+<input type="text" [(ngModel)]="Raviteja"><br>
+<input type="text" [value]="Raviteja" (input)="Raviteja=$event.target.value"><br>
+{{Raviteja}}
+</div>
+
+<h1 class="h1">Interpolate Binding</h1>
+<p>Student ID :{{Sid}}</p>
+<p>Student Name :{{Sname}}</p>
+
+<br/>
+<br/>
+<div>{{num1+1}}</div>
+<div>{{num1+num2}}</div>
+<div>{{num1-num2}}</div>
+<div>{{num1*num2}}</div>
+<div>{{num2/num1}}</div>
+<br/>
+<!-- Property Binding -->
+<h1 class="h1">Property Binding</h1>
+<input type="text" class="form-control" (input)="onupdateservername($event)"/>
+<br/>
+<br/>
+<ul>
+    <li><button class="btn btn-primary" [disabled]="!btnstatus1" (click)="servercreate()">Add Server</button>
+        <p>{{btnstatus1}}</p></li>
+</ul>
+ 
+ <p>  {{studentcreatestatus}}</p>  
+<!-- <p *ngIf="serverCreated">server was created {{servername}}</p> -->
+
+<br/>
+<br/>
+
+<!-- Event Binding -->
+<h1 class="h1">Event Binding</h1>
+<label>Student name:</label>
+<input type="text" [(ngModel)]="Studentname" (input)="onUpdateStudent($event)"><br/>
+
+<button (click)="oncreatestudent()">Add Student</button><br/>
+{{STUDENT}}
+<br/><br/>
+<button (click)="onclick()">Event Binding</button>
+<p>{{Sname}}</p>
+<br/>
+<br/>
+<div> Months :
+    <select (change) = "changemonths($event)">
+       <option *ngFor = "let i of months">{{i}}</option>
+    </select>
+ </div>
+<!-- Two Way Binding -->
+<h1 class="h1">Two Way Binding</h1>
+<input type="text" [(ngModel)]="servername"/>
+<p>{{servername}}</p>
+<!-- <input type="text" [(ngModel)]="servername"/>
+<p>{{servername}}</p> -->
+<h1 class="h1">{{name}}</h1>
+<hr>
+
+
+
+<h1 [class]="succcessclass">Class Binding</h1>
+<h1 class="text-special" [class]="succcessclass">Class Binding</h1>
+<h1 [class.text-danger]="haserror">Class Binding</h1>
+<h1 [ngClass]="messageclass">Class Binding</h1>
+<h1 class="h1">Style Binding</h1>
+<hr>
+<h1 [style.color]="'orange'">Style Binding1</h1>
+<h1 [style.color]="hascolor ? 'red': 'green'">Style Binding2</h1>
+<h1 [style.color]="helightcolor">Style Binding3</h1>
+<h1 [ngStyle]="colorobjects">Style Binding4</h1>
+
+
+
+

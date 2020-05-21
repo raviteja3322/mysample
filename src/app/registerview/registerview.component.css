@@ -1,0 +1,32 @@
+#btn1{
+    margin-left: 650px;
+    background-color: #e7e7e7; color: black;
+  }
+   
+  .btn{
+    padding: 10px 24px;
+    background-color: #e7e7e7; color: black;
+ 
+  }
+
+
+  
+  .table,td,th{
+    color: aliceblue;
+    background-color: darkcyan;
+    text-align: center;
+    /* border-block-start-style: dotted; */
+  }
+  
+  .table{
+    box-sizing: border-box;
+    border: black;
+    width: 80%;
+    margin-left: 20px;
+    
+  }
+
+th{
+    background-color: black;
+    padding-left: 8px;
+}

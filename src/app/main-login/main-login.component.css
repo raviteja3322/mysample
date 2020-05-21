@@ -1,0 +1,32 @@
+
+.container{
+    margin-bottom: 30px;
+    margin-left: 200px;
+  
+}
+
+#btn1{
+    /* margin-left: 650px; */
+    background-color: #e7e7e7; color: black;
+  }
+   
+
+  input.ng-invalid.ng-touched{
+    border-color: red;
+}
+
+select.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.head{
+  text-align: center;
+  color: white;
+}
+
+
+.head{
+  text-align: center;
+  color: white;
+}
+

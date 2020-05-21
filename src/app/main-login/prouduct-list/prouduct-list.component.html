@@ -1,0 +1,78 @@
+<button id="btn1" mat-raised-button color="warn" (click)="backbtn()">BACK</button>
+<br>
+<br>
+    <!-- <table  border = "1" id="empoyelist">
+          <tr>
+                <th>ID</th>
+                <th>Productname</th>
+                <th>ProductDescription</th>
+                <th>ProduCategory</th>
+            </tr>
+          <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.productname | titlecase}}</td>
+            <td>{{product.productDescription}}</td>
+            <td>{{product.produCategory | titlecase}}</td>
+            <td [routerLink]="['/ProductUpdate',product.id]"><button class="btn btn-primary">EDIT</button></td>
+            <td (click)="deleteproduct(product.id)"><button class="btn btn-danger">DELETE</button></td>
+          </tr>
+    </table> -->
+
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+    </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+
+
+    <table mat-table [dataSource]="products" matSort class="mat-elevation-z8">
+    
+      <ng-container matColumnDef="ID">
+        <th mat-header-cell  mat-sort-header *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+       
+      </ng-container>
+    
+   
+      <ng-container matColumnDef="Productname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Productname </th>
+        <td mat-cell *matCellDef="let element"> {{element.productname}} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="ProductDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ProductDescription </th>
+        <td mat-cell *matCellDef="let element"> {{element.productDescription}} </td>
+      </ng-container>
+    
+     
+      <ng-container matColumnDef="ProduCategory">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ProduCategory </th>
+        <td mat-cell *matCellDef="let element"> {{element.produCategory}} </td>
+      
+      </ng-container>
+
+      <ng-container matColumnDef="getdetails">
+        <th mat-header-cell *matHeaderCellDef> Details </th>
+        <td mat-cell *matCellDef="let element" class="action-link"> 
+          <button mat-raised-button (click)="openDialog($event, element)">VIEW</button> 
+        </td>
+      </ng-container>
+     
+      <!-- <button mat-raised-button color="primary" (click)="getRecord(element.productname)">Get Details</button> -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     
+    </table>
+
+  </div>   
+    <br>
+
+<mat-paginator [pageSizeOptions]="[2,5,10]" [length]="5" [pageSize]="3" showFirstLastButtons></mat-paginator>
+    
+
+
+    
+   
+

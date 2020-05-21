@@ -1,0 +1,61 @@
+<h1>This is Content Projection page!</h1>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div appCustomDirective class="box" >
+            <h1>Welcome</h1>
+         </div>
+    </div>
+    <div class="col-md-7">
+        <div class="box1">
+
+            <h1 appCustomDirective [forecolour]="'white'" [bgColour]="'red'">HighlightColour..!</h1>
+        
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<input type="text" appCustomDirective [Colour]="'blue'">
+<br>
+<br>
+<!-- <p appCustomDirective>when we click on button the Color will be change</p>
+<br>
+<br>
+<button (click)="colourchange()" color="red" type="button">red</button>
+<button (click)="colourchange()" color="black" type="button">black</button>
+<button (click)="colourchange()" color="blue" type="button">blue</button> -->
+
+
+<div appCustomDirective (event)='click($event)' >
+   <h5>Child To Parent using @output Directives</h5> 
+</div>
+
+<br>
+
+<h3>{{message}}</h3>
+
+<!-- <h1>Custom Pipe</h1>
+
+<h1>
+    {{pipe | pipetag:3}}
+</h1> -->
+
+
+<!-- 
+<br>
+<br>
+<div class="box1">
+
+    <h1 appCustomDirective [forecolour]="'green'" [bgColour]="'red'">HighlightColour me..!</h1>
+
+</div> -->
+
+
+<!-- <ng-content select=".ravi"></ng-content>
+<ng-content select="h1"></ng-content>
+<ng-content select="[ravi]"></ng-content> -->
+
+<!-- <ng-content select=".ravi"></ng-content>
+<ng-content select="[teja]"></ng-content> -->

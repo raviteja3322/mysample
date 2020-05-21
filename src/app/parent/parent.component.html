@@ -1,0 +1,36 @@
+
+
+
+ <!-- (backsends)="messa($event)" -->
+
+
+
+<app-child  [ARTISTt]='artist' [headerTemplate]="headerTemplate" [parentdata]="parent" [raviteja]='usertext'  (backsends)="messa($event)"></app-child>
+
+
+
+<hr>
+
+<ng-template #headerTemplate>
+    <div><b>{{"Hi iam " +' '+parent}}</b></div>
+ </ng-template>
+
+
+
+<label>Name</label><br/>
+<input type="text" [(ngModel)]="usertext">
+<br/><br/>
+
+
+<h1 style="text-align: center">This is parent Components</h1>
+
+<div>
+    <h1>{{message}}</h1>
+</div>
+
+<hr>
+<h1 style="text-align: center">This is ViewChild Components</h1>
+<b>{{ravi}}</b>
+
+
+

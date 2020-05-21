@@ -1,0 +1,43 @@
+
+ 
+  <h2>Scrolling</h2>
+
+<cdk-virtual-scroll-viewport [itemSize]="100" class="example-viewport">
+<table class="table" border="1">
+    <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+    </tr>
+    
+    <tr *cdkVirtualFor="let user of getemployees1">
+      <td>{{user.userId}}</td>
+      <td>{{user.id}}</td>
+      <td>{{user.title}}</td>
+      <td>{{user.body}}</td>
+    </tr>
+</table> 
+</cdk-virtual-scroll-viewport>
+
+
+
+<!-- <h3>Angular 7 - Virtual Scrolling</h3>
+<cdk-virtual-scroll-viewport [itemSize] = "20">
+   <table>
+      <thead>
+         <tr>
+            <td>ID</td>
+            <td>ThumbNail</td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *cdkVirtualFor = "let album of albumdetails">
+            <td>{{album.id}}</td>
+            <td>
+               <img src = "{{album.thumbnailUrl}}" width = "100" height = "100"/>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</cdk-virtual-scroll-viewport> -->

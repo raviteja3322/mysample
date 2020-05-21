@@ -1,0 +1,49 @@
+<h4>You Enter From Parent Component is: <b style="color: white;">{{raviteja}}</b></h4>
+
+<div style="text-align: center;">
+    <h1>
+        This is child Componets
+    </h1>
+</div>
+{{serivees}}
+<hr>
+<!-- <h1>{{"Hi iam " +' '+parentdata}}</h1> -->
+<ng-container [ngTemplateOutlet]="headerTemplate ? headerTemplate: defaultHeader">
+
+</ng-container>
+<br>
+<button (click)="backsend()" class="btn btn-success">Back send to Parent</button>&nbsp;&nbsp;
+
+<br>
+<br>
+
+<ng-template #defaultHeader><b>Name Loading.....</b></ng-template>
+
+
+<table class="table">
+    <tr>
+          <th style="color: white;">ID</th>
+          <th style="color: white;">Name</th>
+       
+    </tr>
+    <tr *ngFor="let user of ARTISTt">
+      <td>{{user.number}}</td>
+      <td>{{user.name}}</td>
+     </tr>
+</table>
+
+
+<!-- <table class="table">
+    <tr>
+        <th style="color: white;">ID</th>
+        <th style="color: white;">Name</th>
+    </tr>
+    <ng-container *ngFor="let user of ARTISTt">
+        <ng-container *ngIf="user.number >3">
+          <tr>
+            <td>{{user.number}}</td>
+            <td>{{user.name}}</td>
+          </tr>
+        </ng-container> 
+    </ng-container> 
+</table> -->

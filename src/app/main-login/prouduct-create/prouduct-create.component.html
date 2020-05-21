@@ -1,0 +1,119 @@
+<!-- <div class="container">
+    <div class="row pt-15">
+        <div class="col-md-6 mx-auto">
+            <div class="card-rounded-0">
+                <div class="card-header">
+                        <h3 class="head">Register Form</h3>
+                </div>
+                <div class="card-boday">
+
+
+                       
+
+                        <form #productdata="ngForm" (ngSubmit)="addnewproduct(productdata.value)">
+                
+                                <div class="form-group">
+                                    <label><b>ProductName</b></label>
+                                    <input type="text"  
+                                    id="productname" 
+                                    class="form-control"  
+                                    placeholder="Enter your ProductName...."
+                                    required 
+                                    [(ngModel)]="productname"
+                                    name="productname" 
+                                    #product="ngModel" 
+                                    minlength="3"
+                                    maxlength="10" ngModel>
+                                
+                                    <div class="help-bpx" *ngIf="!product.valid && product.touched" >
+                                        <div *ngIf="product.errors.required" style="color:black;">**Please enter your ProductName..</div>
+                                        <div *ngIf="product.errors.minlength" style="color:black;">**username should be minimum 3 characters..</div>
+                                    </div>
+
+                            </div>
+
+                                <div class="form-group">
+                                    <label ><b>productDescription</b></label>
+                                    <input type="text"  
+                                    class="form-control"  
+                                    autocomplete="off" 
+                                    placeholder="Enter your productDescription...."
+                                    required 
+                                    [(ngModel)]="productDescription"
+                                    name="productDescription"  id="productDescription" 
+                                  
+                                    #productdesp="ngModel" ngModel>
+                                    <div class="help-bpx" *ngIf="!productdesp.valid && productdesp.touched" >
+                                        <div *ngIf="productdesp.errors.required" style="color:black;">**Please enter your productDescription..</div>
+                                       
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                <label><b>produCategory</b></label>
+                                <input type="text"  
+                                id="produCategory" 
+                                class="form-control"  
+                                placeholder="Enter your produCategory...."
+                                required 
+                                [(ngModel)]="produCategory"
+                                name="produCategory" 
+                                #producateg="ngModel"
+                                minlength="4" ngModel
+                                >
+                                <div class="help-bpx" *ngIf="!producateg.valid && producateg.touched" >
+                                    <div *ngIf="producateg.errors.required" style="color:black;">**Please enter your produCategory..</div>
+                                    <div *ngIf="producateg.errors.minlength" style="color:black;">**companyname should be minimum 9 characters</div>
+                                </div>
+                                </div>
+
+                            <div class="form-action-buttons">
+                              
+                                <button mat-raised-button [disabled]="!productdata.valid">Submit</button>
+                         </div>
+
+                         
+                        </form>  
+
+                       
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   -->
+
+
+
+<form class="example-form"  #productdata="ngForm" (ngSubmit)="addnewproduct(productdata.value)">
+    <mat-form-field class="example-full-width">
+      <mat-label style="color: white;">ProductName</mat-label>
+      <input matInput [formControl]="ProductName"  placeholder="Enter your ProductName....">
+      <mat-error *ngIf="ProductName.hasError('required')" >
+        ProductName is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+<br>
+    <mat-form-field class="example-full-width">
+        <mat-label style="color: white;">productDescription</mat-label>
+        <input matInput [formControl]="productDescription"  placeholder="Enter your productDescription....">
+        <mat-error *ngIf="productDescription.hasError('required')" >
+            productDescription is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+<br>
+      <mat-form-field class="example-full-width">
+        <mat-label style="color: white;">produCategory</mat-label>
+        <input matInput [formControl]="produCategory"  placeholder="Enter your produCategory....">
+        <mat-error *ngIf="produCategory.hasError('required')" >
+            produCategory is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <div class="form-action-buttons">
+     
+        <button mat-raised-button class="btn3" [disabled]="!productdata.valid">Submit</button>
+ </div>
+ <br>
+</form>
+  

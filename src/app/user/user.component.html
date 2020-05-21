@@ -1,0 +1,20 @@
+
+<h1>The Table id is {{getid}}</h1>
+<button><a (click)="back()" style="color:black;">Back</a></button>	&nbsp;	&nbsp;
+<button><a (click)="next()" style="color:black;">Next</a></button>
+<br>
+<br>
+<button (click)="homepage()" class="btn btn-success">Home Page</button>
+
+
+<div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px">
+    <select [(ngModel)]="empidselectd" (ngModelChange)="onemployeselected($event)">
+        <option value="">--select name---</option>
+        <option *ngFor="let emp of data" [ngValue]="emp">
+            {{emp.name}}
+        </option>
+    </select><br>
+  
+<br>
+    {{modifieldtext}}
+</div>
