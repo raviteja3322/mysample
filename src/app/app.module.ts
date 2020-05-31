@@ -170,8 +170,8 @@ import { WebComponentsComponent } from './web-components/web-components.componen
 export class AppModule implements DoBootstrap {
 
 //   constructor(private injector: Injector) {
-//     const Counter = createCustomElement(WebComponentsComponent, { injector });
-//     customElements.define('ui-button', Counter);
+//     const webComponent = createCustomElement(WebComponentsComponent, { injector });
+//     customElements.define('ui-button', button1);
 // }
 
   ngDoBootstrap() {}
