@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector, DoBootstrap } from '@angular/core';
 import { FormsModule, ReactiveFormsModule,NgForm} from '@angular/forms';
 import {  AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-
+import { createCustomElement } from '@angular/elements';
 
 //import { ShoppingModule } from './shopping-list/shopping.module';
 //import {RecipesModule} from './recipes/recipes.module';
@@ -94,6 +94,7 @@ import { AnimationComponent } from './animation/animation.component';
 import { AngularMaterialModule } from './AngularMaterialModule';
 import { DialogBoxComponentComponent } from './dialog-box-component/dialog-box-component.component';
 import { MaterialserivesComponent } from './materialserives/materialserives.component';
+import { WebComponentsComponent } from './web-components/web-components.component';
 
 
 
@@ -144,7 +145,7 @@ import { MaterialserivesComponent } from './materialserives/materialserives.comp
        ProuductUpdateComponent,
        AnimationComponent,
        DialogBoxComponentComponent,
-       MaterialserivesComponent
+       MaterialserivesComponent,WebComponentsComponent
   ],
   imports: [
     CommonModule,AngularMaterialModule,
@@ -162,13 +163,18 @@ import { MaterialserivesComponent } from './materialserives/materialserives.comp
     // RecipesModule AuthGuard ResolverService
     
   ],
-  entryComponents: [DialogBoxComponentComponent],
+  entryComponents: [DialogBoxComponentComponent,WebComponentsComponent],
   providers: [MySerivesService,SerivesService,AuthGuard,ResolverService,ResolveService,MainSerivesService,Auth1Guard,AuthSerives,localstorage,{ provide: HTTP_INTERCEPTORS, useClass: interceptors, multi: true }],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(){
-    console.log("app module loading")
-  }
+export class AppModule implements DoBootstrap {
+
+//   constructor(private injector: Injector) {
+//     const Counter = createCustomElement(WebComponentsComponent, { injector });
+//     customElements.define('ui-button', Counter);
+// }
+
+  ngDoBootstrap() {}
+  
  }
 
