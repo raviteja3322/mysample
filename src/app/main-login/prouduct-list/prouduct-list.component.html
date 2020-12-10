@@ -1,7 +1,7 @@
 <button id="btn1" mat-raised-button color="warn" (click)="backbtn()">BACK</button>
 <br>
 <br>
-    <!-- <table  border = "1" id="empoyelist">
+    <table  border = "1" id="empoyelist">
           <tr>
                 <th>ID</th>
                 <th>Productname</th>
@@ -16,9 +16,9 @@
             <td [routerLink]="['/ProductUpdate',product.id]"><button class="btn btn-primary">EDIT</button></td>
             <td (click)="deleteproduct(product.id)"><button class="btn btn-danger">DELETE</button></td>
           </tr>
-    </table> -->
+    </table>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
     </mat-form-field>
@@ -60,7 +60,7 @@
         </td>
       </ng-container>
      
-      <!-- <button mat-raised-button color="primary" (click)="getRecord(element.productname)">Get Details</button> -->
+   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
      
@@ -71,7 +71,7 @@
 
 <mat-paginator [pageSizeOptions]="[2,5,10]" [length]="5" [pageSize]="3" showFirstLastButtons></mat-paginator>
     
-
+ -->
 
     
    
