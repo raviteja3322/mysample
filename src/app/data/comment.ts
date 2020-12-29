@@ -6,14 +6,14 @@ export interface Comments{
 }
 
 
-export class json{
+export class color{
     id:number;
     name:string;
     color:string;
 }
 
 export class comment{
-     id:number;
+    id:number;
     name:string;
     age:number;
 }

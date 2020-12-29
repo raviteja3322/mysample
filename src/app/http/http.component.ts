@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SerivesService } from '../serives.service';
 import {postsjson} from '../data/post';
-import { json } from '../data/comment';
+import { color } from '../data/comment';
 
 import { Observable } from 'rxjs/internal/observable';
+
 // import { Pipe, PipeTransform } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 // import { FilterPipe } from '../filter.pipe';
@@ -14,28 +15,27 @@ import { Observable } from 'rxjs/internal/observable';
   templateUrl: './http.component.html',
   styleUrls: ['./http.component.css']
 })
+
 export class HttpComponent implements OnInit {
 
- //HTTP
+//HTTP
 public employedetails;
-jsonserver:json[];
-BackendnodejsApi=[];
-getemployees1=[];
-public  employees=[];
+public jsonserver:color[];
+public BackendnodejsApi=[];
+public getemployees1=[];
+public employees=[];
 public getlist:any[];
 public getuser:any[];
-getjson1=[];
-
-
-istpost:postsjson[];
-objpost:postsjson;
+public getjson1:any=[];
+public istpost:postsjson[];
+public objpost:postsjson;
 
 
 
   constructor(private dep1 : SerivesService, private _observ : SerivesService) {
     
-    this._observ.getemploye()
-      .subscribe(
+    this._observ.getemploye().subscribe
+    (
         resp => 
         {
           this.employedetails=resp
@@ -54,16 +54,15 @@ objpost:postsjson;
 
 
 
-    this._observ.getjson()
-    .subscribe
+    this._observ.getjson().subscribe
     (
         data => 
         {
           this.jsonserver = data
         }
-    )
-    this._observ.getcomment()
-      .subscribe
+    );
+
+    this._observ.getcomment().subscribe
       (
           data => 
           {
@@ -71,16 +70,15 @@ objpost:postsjson;
             this.BackendnodejsApi = data
             console.log("hii"+this.BackendnodejsApi)
           }
-      )
+      );
 
-      this._observ.getemployees1()
-      .subscribe
+      this._observ.getemployees1().subscribe
       (
           data => 
           {
             this.getemployees1 = data
           }
-      )
+      );
      
 
 

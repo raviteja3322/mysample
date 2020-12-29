@@ -13,16 +13,16 @@ import { tokenparam } from '../class/tokenparam';
   styleUrls: ['./displaydata.component.css']
 })
 export class DisplaydataComponent implements OnInit {
-  isLoggedIn = false;
-  token:any;
+
+public  isLoggedIn = false;
+public  token:any;
+public  displaytoken:string;
+public  userDetails:users[];
+public  role:role[];
+public  selrole:role[];
+public  artists = [];
  
- displaytoken:string;
- userDetails:users[];
- role:role[];
- selrole:role[];
- artists = [];
- 
-  constructor(private autho:AuthSerives,private serives: SerivesService,private router:Router, private localstorage:localstorage) { 
+constructor(private autho:AuthSerives,private serives: SerivesService, private router:Router, private localstorage:localstorage) { 
     const authToken: tokenparam = this.localstorage.getvaluefromlocalstorage();
     if(authToken) {
     this.displaytoken=authToken.token;
@@ -30,11 +30,13 @@ export class DisplaydataComponent implements OnInit {
     .subscribe(
       (data: any)=>{
           this.userDetails=data.users;
+          console.log("Data"+this.displaytoken)
       }    
     );
     }
-   }
-  
+}
+
+
   ngOnInit() {
     this.getArtists();
   }

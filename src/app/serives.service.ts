@@ -3,7 +3,7 @@ import { HttpClient, HttpParams,HttpErrorResponse} from '@angular/common/http';
 import { Observable } from 'rxjs/internal/observable';
 import { Posts } from './employe';
 import { postsjson } from './data/post';
-import {comment} from './data/comment';
+import {color, comment} from './data/comment';
 import 'rxjs/add/operator/map';
 import { observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
@@ -85,8 +85,8 @@ getjson(): Observable<any>{
 private ravi:string='http://localhost:9999/product';
 
 
-getjson1(): Observable<any>{
-  return this.http.get<any>(this.ravi)
+getjson1(): Observable<color>{
+  return this.http.get<color>(this.ravi)
 }
 
 // getjsonparam(): Observable<any>{

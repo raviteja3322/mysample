@@ -25,7 +25,8 @@ export class AuthSerives {
         var data={employee_id, password}
         return this.htpp.post(this.token, data, { headers: HeaderfortokenApi})
             .map((res :any) => {
-                console.log(res);
+              
+                console.log(this.token);
                 this.accesstoken = res.token;
                 return {token:res.token,expires:res.expires};
         });

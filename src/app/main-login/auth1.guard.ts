@@ -19,8 +19,7 @@ export class Auth1Guard implements CanActivate {
           {
             this.routes.navigate(['/mainLogin']);
             return false;
-          }
-    
+          } 
   }
   
 }
